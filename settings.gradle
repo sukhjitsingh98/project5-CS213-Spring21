@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Project5-CS213-Spring2021"
