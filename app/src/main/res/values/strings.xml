@@ -2,4 +2,7 @@
     <string name="app_name">Project5-CS213-Spring2021</string>
     <string name="order_coffee_button">Order Coffee</string>
     <string name="order_donut_button">Order Donuts</string>
+    <string name="current_order_button">Current Order</string>
+    <string name="store_orders_button">Store Orders</string>
+    <string name="title">RU Café Dashboard</string>
 </resources>
