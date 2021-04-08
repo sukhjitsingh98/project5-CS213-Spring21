@@ -12,4 +12,19 @@
     <string name="caramel_checkbox">Caramel</string>
     <string name="whippedCream_checkbox">Whipped Cream</string>
 
+
+    <string-array name="donutCount" >
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+    <string-array name="donutFlavors" >
+        <item>Strawberry</item>
+        <item>Vanilla</item>
+        <item>Chocolate</item>
+    </string-array>
+
+
 </resources>

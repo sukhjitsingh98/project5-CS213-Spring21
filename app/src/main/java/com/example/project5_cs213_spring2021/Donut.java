@@ -10,18 +10,13 @@ package com.example.project5_cs213_spring2021;
  */
 
 public class Donut extends MenuItem implements Customizable{
-
-    private String donutType;
     private String flavor;
-
     /**
-     Constructor used to generate a Donut object with a given donut type and quantity
-     @param donutType the type of donut to be ordered
+     Constructor used to generate a Donut object with a given quantity
      @param donutQuantity the quantity of the donuts to be ordered
      */
-    public Donut(String donutType, int donutQuantity){
+    public Donut(int donutQuantity){
         super(donutQuantity);
-        this.donutType = donutType;
         super.setItemPrice(itemPrice());
         super.setItemString(donutDataString());
     }
@@ -71,20 +66,11 @@ public class Donut extends MenuItem implements Customizable{
     }
 
     /**
-     This method calculates the subtotal price of the Donut instance based on the donut type and quantity
+     This method calculates the subtotal price of the Donut instance based on the donut quantity
      @return subtotal price of the donuts
      */
     public double itemPrice(){
-        if(donutType.equals("Yeast Donut")){
             return Constants.YEAST_DONUT_PRICE * super.getItemQuantity();
-        }
-        else if(donutType.equals("Cake Donut")){
-            return Constants.CAKE_DONUT_PRICE * super.getItemQuantity();
-        }
-        else if(donutType.equals("Donut Hole")){
-            return Constants.DONUT_HOLE_PRICE * super.getItemQuantity();
-        }
-        return 0;
     }
 
     /**
@@ -93,21 +79,11 @@ public class Donut extends MenuItem implements Customizable{
      @return true if the given String represents a valid donut flavor, false otherwise
      */
     private boolean isValidFlavor(String flavor) {
-        if(donutType.equals("Yeast Donut")){
-            if(flavor.equals("Vanilla") || flavor.equals("Strawberry") || flavor.equals("Chocolate")){
+
+        if(flavor.equals("Vanilla") || flavor.equals("Strawberry") || flavor.equals("Chocolate")){
                 return true;
-            }
         }
-        else if(donutType.equals("Cake Donut")){
-            if(flavor.equals("Jelly") || flavor.equals("Old Fashioned") || flavor.equals("Chocolate")){
-                return true;
-            }
-        }
-        else if(donutType.equals("Donut Hole")){
-            if(flavor.equals("Jelly Holes") || flavor.equals("Cinnamon Sugar Holes") || flavor.equals("Glazed Holes")){
-                return true;
-            }
-        }
+
         return false;
     }
 
@@ -133,7 +109,7 @@ public class Donut extends MenuItem implements Customizable{
      @return donutData String representing the data members of an instance of the Donut class.
      */
     private String donutDataString(){
-        String donutData = flavor + " " + donutType + ", Quantity: " + super.getItemQuantity();
+        String donutData = flavor + ", Quantity: " + super.getItemQuantity();
         return donutData;
     }
 

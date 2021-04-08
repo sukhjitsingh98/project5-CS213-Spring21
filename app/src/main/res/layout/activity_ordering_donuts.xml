@@ -6,4 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".OrderingDonutsActivity">
 
+    <ImageView
+        android:id="@+id/donutsPage"
+        android:layout_width="271dp"
+        android:layout_height="218dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="56dp"
+        android:clickable="false"
+        android:contentDescription="@string/order_coffee_button"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/donuts2" />
+
+    <Spinner
+        android:id="@+id/countSpinner"
+        android:layout_width="77dp"
+        android:layout_height="57dp"
+        android:entries="@array/donutCount"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.535" />
+
+    <ListView
+        android:layout_width="296dp"
+        android:layout_height="242dp"
+        android:entries="@array/donutFlavors"
+        android:choiceMode="singleChoice"
+        android:listSelector="#666666"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.91" />
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
