@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Project5-CS213-Spring2021</string>
+    <string name="order_coffee_button">Order Coffee</string>
+    <string name="order_donut_button">Order Donuts</string>
 </resources>
