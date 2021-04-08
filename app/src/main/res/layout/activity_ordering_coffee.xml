@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".OrderingCoffeeActivity">
 
+    <Spinner
+        android:id="@+id/coffeeSize_spinner"
+        android:layout_width="165dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="128dp"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <CheckBox
         android:id="@+id/whippedcream_checkbox"
         android:layout_width="140dp"
