@@ -6,4 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".OrderingCoffeeActivity">
 
+    <CheckBox
+        android:id="@+id/whippedcream_checkbox"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="184dp"
+        android:layout_marginLeft="184dp"
+        android:layout_marginTop="248dp"
+        android:text="@string/whippedCream_checkbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/syrup_checkbox"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginLeft="172dp"
+        android:layout_marginTop="192dp"
+        android:text="@string/syrup_checkbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/caramel_checkbox"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="248dp"
+        android:text="@string/caramel_checkbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/milk_checkbox"
+        android:layout_width="67dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginLeft="256dp"
+        android:layout_marginTop="192dp"
+        android:text="@string/milk_checkbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cream_checkbox"
+        android:layout_width="84dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="192dp"
+        android:text="@string/cream_checkbox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,11 @@
     <string name="current_order_button">Current Order</string>
     <string name="store_orders_button">Store Orders</string>
     <string name="title">RU Café Dashboard</string>
+
+    <string name="cream_checkbox">Cream</string>
+    <string name="syrup_checkbox">Syrup</string>
+    <string name="milk_checkbox">Milk</string>
+    <string name="caramel_checkbox">Caramel</string>
+    <string name="whippedCream_checkbox">Whipped Cream</string>
+
 </resources>
