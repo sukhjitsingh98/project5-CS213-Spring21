@@ -7,12 +7,26 @@
     tools:context=".MainActivity">
 
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="116dp"
+        android:clickable="false"
+        android:contentDescription="@string/order_coffee_button"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/coffee" />
+
     <Button
         android:id="@+id/orderCoffeeButton"
-        android:layout_width="165dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_width="350dp"
+        android:layout_height="201dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="116dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -24,13 +38,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/orderDonutButton"
+        android:layout_width="350dp"
+        android:layout_height="201dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="328dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/order_donut_button"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="#65000000"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="164dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="204dp"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="349dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="328dp"
         android:clickable="false"
         android:contentDescription="@string/order_coffee_button"
         android:scaleType="fitXY"
@@ -38,13 +69,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/donuts" />
 
+    <Button
+        android:id="@+id/storeOrdersButton"
+        android:layout_width="163dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginLeft="212dp"
+        android:layout_marginTop="548dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/store_orders_button"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="#65000000"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/storeOrdersImage"
         android:layout_width="164dp"
         android:layout_height="121dp"
         android:layout_marginStart="212dp"
         android:layout_marginLeft="212dp"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="548dp"
         android:clickable="false"
         android:contentDescription="@string/store_orders_button"
         android:scaleType="fitXY"
@@ -58,7 +106,7 @@
         android:layout_height="121dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="548dp"
         android:clickable="false"
         android:contentDescription="@string/current_order_button"
         android:scaleType="fitXY"
@@ -66,61 +114,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cart" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="164dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="116dp"
-        android:clickable="false"
-        android:contentDescription="@string/order_coffee_button"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/coffee" />
-
-    <Button
-        android:id="@+id/orderDonutButton"
-        android:layout_width="163dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="204dp"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="116dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="@string/order_donut_button"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:backgroundTint="#65000000"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/storeOrdersButton"
-        android:layout_width="163dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginLeft="212dp"
-        android:layout_marginTop="376dp"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="@string/store_orders_button"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold"
-        app:backgroundTint="#65000000"
-        app:iconTint="#00FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/currentOrderButton"
         android:layout_width="165dp"
         android:layout_height="122dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="376dp"
+        android:layout_marginTop="548dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="@string/current_order_button"
