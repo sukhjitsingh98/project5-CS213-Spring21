@@ -6,13 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="164dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginLeft="208dp"
+        android:layout_marginTop="120dp"
+        android:clickable="false"
+        android:contentDescription="@string/order_coffee_button"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/donuts" />
+
+    <Button
+        android:id="@+id/orderDonutButton"
+        android:layout_width="163dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginLeft="208dp"
+        android:layout_marginTop="120dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/order_donut_button"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="#65000000"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="164dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="120dp"
+        android:clickable="false"
+        android:contentDescription="@string/order_coffee_button"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/coffee" />
+
+    <Button
+        android:id="@+id/orderCoffeeButton"
+        android:layout_width="165dp"
+        android:layout_height="122dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="120dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/order_coffee_button"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="#65000000"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
