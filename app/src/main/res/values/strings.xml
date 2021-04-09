@@ -5,6 +5,7 @@
     <string name="current_order_button">Current Order</string>
     <string name="store_orders_button">Store Orders</string>
     <string name="title">RU Café Dashboard</string>
+    <string name="coffeePageTitle">ORDER COFFEE</string>
 
     <string-array name="coffeeSizes" >
         <item>Short</item>
@@ -24,7 +25,7 @@
     <string name="milk_checkbox">Milk</string>
     <string name="caramel_checkbox">Caramel</string>
     <string name="whippedCream_checkbox">Whipped Cream</string>
-
+    <string name="place_coffee_order">Place Coffee Order</string>
 
     <string-array name="donutCount" >
         <item>1</item>
