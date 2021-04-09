@@ -44,12 +44,44 @@ public class OrderingDonutsActivity extends AppCompatActivity {
                 //Toast.makeText(OrderingDonutsActivity.this, selectableFlavors.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
                 flavor = selectableFlavors.getItemAtPosition(position).toString();
                 Intent intent = new Intent(OrderingDonutsActivity.this, AddDonutActivity.class);
+                //Send the name of the flavor to display.
+                intent.putExtra(String.valueOf(R.string.flavor), flavor);
                 startActivityForResult(intent, code);
 
             }
         });
 
+
     }
+
+    //reload the listview with selected items and await clicks.
+    private void loadSelected() {
+        //look at the current donuts and display them
+        ListView selected = (ListView) findViewById(R.id.selected);
+        String[] items = new String[donuts.size()];
+        for (int i = 0; i < items.length; i++) {
+            items[i] = donuts.get(i).getItemString();
+        }
+
+        ArrayAdapter adapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.simple_list_item_1,
+                items
+        );
+        selected.setAdapter(adapter);
+
+        //now set up a onclick.
+        selected.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                //display popup and remove the donut clicked if confirmed.
+                Toast.makeText(OrderingDonutsActivity.this, "CLICKED", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
 
     @Override
     protected void onActivityResult(int request, int result, Intent data) {
@@ -76,15 +108,14 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         //add it to the list.
         donuts.add(donut);
 
-        //print test
-        for(int i = 0; i < donuts.size(); i++) {
-            System.out.println(donuts.get(i).getFlavor() + " : " + donuts.get(i).getItemString());
-        }
-
-
-        //WILL REPLACE THIS IN strings.xml
-        String confirmation = "Added " + donutCount + " " + flavor + " donut(s)";
+        //Print out Toast confirmation
+        String confirmation =  donut.getItemString();
         Toast.makeText(OrderingDonutsActivity.this, confirmation, Toast.LENGTH_SHORT).show();
+
+        //Update the the selected listview
+        loadSelected();
     }
+
+
 
 }

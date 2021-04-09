@@ -25,6 +25,8 @@
         <item>Vanilla</item>
         <item>Chocolate</item>
     </string-array>
+    <string name="add_donut_button">Add To Order</string>
+    <string name="flavor">flavor</string>
 
 
 </resources>
