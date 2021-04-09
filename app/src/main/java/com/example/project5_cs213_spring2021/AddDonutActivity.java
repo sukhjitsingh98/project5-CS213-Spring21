@@ -13,6 +13,7 @@ public class AddDonutActivity extends AppCompatActivity {
 
     Spinner countSpinner;
     TextView flavorName;
+    TextView price;
 
 
     @Override

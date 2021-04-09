@@ -40,6 +40,6 @@
     </string-array>
     <string name="add_donut_button">Add To Order</string>
     <string name="flavor">flavor</string>
-
-
+    <string name="remove_donut">Donut has been removed.</string>
+    <string name="dollar_sign">$</string>
 </resources>

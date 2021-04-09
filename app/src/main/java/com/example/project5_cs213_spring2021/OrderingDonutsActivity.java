@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ActionMode;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -57,10 +61,12 @@ public class OrderingDonutsActivity extends AppCompatActivity {
     //reload the listview with selected items and await clicks.
     private void loadSelected() {
         //look at the current donuts and display them
+        double priceSum = 0;
         ListView selected = (ListView) findViewById(R.id.selected);
         String[] items = new String[donuts.size()];
         for (int i = 0; i < items.length; i++) {
             items[i] = donuts.get(i).getItemString();
+            priceSum += donuts.get(i).itemPrice();
         }
 
         ArrayAdapter adapter = new ArrayAdapter<String>(
@@ -70,13 +76,32 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         );
         selected.setAdapter(adapter);
 
+        //set the price based on the number of donuts since they all cost the same
+        TextView totalPrice = (TextView) findViewById(R.id.price_of_donuts);
+        totalPrice.setText( getResources().getString(R.string.dollar_sign) + String.format("%.2f", priceSum) );
+
         //now set up a onclick.
         selected.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 //display popup and remove the donut clicked if confirmed.
-                Toast.makeText(OrderingDonutsActivity.this, "CLICKED", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(OrderingDonutsActivity.this, "CLICKED", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder dialog = new AlertDialog.Builder(OrderingDonutsActivity.this);
+                dialog.setMessage("Remove the donut from the order?")
+                        .setPositiveButton("Remove", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Deletion has been confirmed, delete the donut from the list.
+                                System.out.println("deleting at position: " + position);
+                                removeDonutFromList(position);
+                            }
+                        })
+                        .setNegativeButton("Cancel", null);
+
+
+                AlertDialog alert = dialog.create();
+                alert.show();
             }
         });
 
@@ -101,7 +126,6 @@ public class OrderingDonutsActivity extends AppCompatActivity {
 
     //will add the select donut of chosen flavor and count to the list.
     private void addDonutToList( int donutCount) {
-
         //create the new donut
         Donut donut = new Donut(donutCount);
         donut.add(flavor);
@@ -113,6 +137,15 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         Toast.makeText(OrderingDonutsActivity.this, confirmation, Toast.LENGTH_SHORT).show();
 
         //Update the the selected listview
+        loadSelected();
+    }
+
+    //remove from the list at the given index
+    private void removeDonutFromList(int index) {
+        donuts.remove(index);
+        //make toast which states the donut removal
+        Toast.makeText(OrderingDonutsActivity.this, R.string.remove_donut, Toast.LENGTH_SHORT).show();
+        //Reload the listView after the removal
         loadSelected();
     }
 

@@ -10,11 +10,11 @@
         android:id="@+id/countSpinner"
         android:layout_width="98dp"
         android:layout_height="77dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="336dp"
         android:baselineAligned="false"
         android:entries="@array/donutCount"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintHorizontal_bias="0.817"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="604dp"
         android:onClick="handleAddDonut"
         android:text="@string/add_donut_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,13 +31,24 @@
 
     <TextView
         android:id="@+id/flavorName"
-        android:layout_width="126dp"
-        android:layout_height="104dp"
+        android:layout_width="133dp"
+        android:layout_height="54dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.203"
+        app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintVertical_bias="0.53" />
+
+    <TextView
+        android:id="@+id/donutPrice"
+        android:layout_width="111dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.683" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
