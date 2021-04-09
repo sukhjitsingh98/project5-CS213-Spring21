@@ -6,6 +6,19 @@
     <string name="store_orders_button">Store Orders</string>
     <string name="title">RU Café Dashboard</string>
 
+    <string-array name="coffeeSizes" >
+        <item>Short</item>
+        <item>Tall</item>
+        <item>Grande</item>
+        <item>Venti</item>
+    </string-array>
+    <string-array name="coffeeCount" >
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
     <string name="cream_checkbox">Cream</string>
     <string name="syrup_checkbox">Syrup</string>
     <string name="milk_checkbox">Milk</string>
