@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="116dp"
+        android:clickable="false"
+        android:contentDescription="@string/order_coffee_button"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/coffee" />
+
     <Button
         android:id="@+id/orderCoffeeButton"
         android:layout_width="350dp"
@@ -23,21 +37,6 @@
         app:iconTint="#00FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="116dp"
-        android:clickable="false"
-        android:contentDescription="@string/order_coffee_button"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/coffee" />
-
 
 
     <Button

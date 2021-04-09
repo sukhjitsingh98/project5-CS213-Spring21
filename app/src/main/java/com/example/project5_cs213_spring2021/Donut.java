@@ -70,7 +70,7 @@ public class Donut extends MenuItem implements Customizable{
      @return subtotal price of the donuts
      */
     public double itemPrice(){
-            return Constants.YEAST_DONUT_PRICE * super.getItemQuantity();
+            return Constants.DONUT_PRICE * super.getItemQuantity();
     }
 
     /**

@@ -34,7 +34,7 @@ public class AddDonutActivity extends AppCompatActivity {
                         int count = Integer.parseInt(countSpinner.getSelectedItem().toString());
                         //get the textview to modify
                         price = (TextView) findViewById(R.id.donutPrice);
-                        price.setText(getResources().getString(R.string.dollar_sign) + String.format("%.2f", count*Constants.YEAST_DONUT_PRICE));
+                        price.setText(getResources().getString(R.string.dollar_sign) + String.format("%.2f", count*Constants.DONUT_PRICE));
                     }
                     public void onNothingSelected(AdapterView<?> parent) { //selected by default, this does nothing but is still needed.
                     }
