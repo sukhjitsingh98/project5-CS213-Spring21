@@ -10,8 +10,8 @@
         android:id="@+id/coffeeSize_spinner"
         android:layout_width="165dp"
         android:layout_height="43dp"
-        android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
+        android:entries="@array/coffeeSizes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.308"
@@ -23,8 +23,8 @@
         android:id="@+id/coffeeQuantity_spinner"
         android:layout_width="69dp"
         android:layout_height="46dp"
-        android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
+        android:entries="@array/coffeeCount"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.748"
@@ -97,4 +97,14 @@
         app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subtotalTextView"
+        android:layout_width="120dp"
+        android:layout_height="33dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

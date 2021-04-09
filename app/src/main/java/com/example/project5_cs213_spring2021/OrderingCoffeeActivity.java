@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class OrderingCoffeeActivity extends AppCompatActivity {
 
     String size = "Short";
-    int quantity = 0;
+    int quantity = 1;
     Coffee coffee = new Coffee(size, quantity);
+    TextView subtotalTextView = (TextView) findViewById(R.id.subtotalTextView);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +30,20 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
                 getResources().getStringArray(R.array.coffeeSizes));
         coffeeSizeDropdown.setAdapter(coffeeSizeAdapter);
 
-        coffeeSizeDropdown.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        coffeeSizeDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 size = coffeeSizeDropdown.getItemAtPosition(position).toString();
                 coffee.setCoffeeType(size);
+                //subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
-
+/*
         //Dropdown Menu for Coffee Quantity
         Spinner coffeeQuantityDropdown = findViewById(R.id.coffeeQuantity_spinner);
         ArrayAdapter<String> coffeeQuantityAdapter = new ArrayAdapter<>(
@@ -50,6 +58,6 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
                 quantity = Integer.parseInt(coffeeQuantityDropdown.getItemAtPosition(position).toString());
                 coffee.setCoffeeQuantity(quantity);
             }
-        });
+        });*/
     }
 }
