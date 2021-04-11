@@ -117,9 +117,12 @@
         android:id="@+id/placeCoffeeOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
         android:layout_marginTop="60dp"
+        android:onClick="onSubmitCoffeeOrder"
         android:text="@string/place_coffee_order"
-        app:layout_constraintTop_toBottomOf="@+id/subtotalTextView"
-        tools:layout_editor_absoluteX="106dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtotalTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

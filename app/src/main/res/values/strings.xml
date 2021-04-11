@@ -43,4 +43,8 @@
     <string name="flavor">flavor</string>
     <string name="remove_donut">Donut has been removed.</string>
     <string name="dollar_sign">$</string>
+
+    <string name="removeMenuItemButtonText">Remove Item</string>
+    <string name="submitOrderButtonText">Submit Order</string>
+    <string name="subtotalLabel">Subtotal</string>
 </resources>

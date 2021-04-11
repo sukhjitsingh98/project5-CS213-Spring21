@@ -2,8 +2,10 @@ package com.example.project5_cs213_spring2021;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -105,6 +107,12 @@ public class OrderingCoffeeActivity extends AppCompatActivity /*implements Adapt
         subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
     }
 
+    public void onSubmitCoffeeOrder(View view){
 
+        Intent sendCoffeeIntent = new Intent();
+        sendCoffeeIntent.putExtra("key", new Coffee(coffee.getItemQuantity(), coffee.getCoffeeType(), coffee.getAddInsList()));
+        setResult(Activity.RESULT_OK, sendCoffeeIntent);
+        onBackPressed();
+    }
 
 }

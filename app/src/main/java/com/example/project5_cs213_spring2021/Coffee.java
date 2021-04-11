@@ -1,6 +1,11 @@
 package com.example.project5_cs213_spring2021;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
+
+import androidx.versionedparcelable.ParcelField;
 
 /**
  The Coffee class defines the abstract Coffee type.
@@ -11,10 +16,29 @@ import java.util.ArrayList;
  @author German Munguia, Sukhjit Singh
  */
 
-public class Coffee extends MenuItem implements Customizable{
+public class Coffee extends MenuItem implements Customizable, Parcelable {
 
     private String coffeeType;
     private ArrayList<String> addInsList = new ArrayList<String>();
+
+    public int describeContents(){
+        return 0;
+    }
+
+    public void writeToParcel(Parcel out, int flags){
+        out.writeInt(super.getItemQuantity());
+        out.writeString(coffeeType);
+        out.writeList(addInsList);
+    }
+
+    public static final Parcelable.Creator<Coffee> CREATOR = new Parcelable.Creator<Coffee>(){
+        public Coffee createFromParcel (Parcel in){
+            return new Coffee(in);
+        }
+        public Coffee[] newArray(int size){
+            return new Coffee[size];
+        }
+    };
 
     /**
      Constructor used to generate a Coffee object with a given coffee size and quantity
@@ -24,6 +48,22 @@ public class Coffee extends MenuItem implements Customizable{
     public Coffee(String coffeeType, int coffeeQuantity){
         super(coffeeQuantity);
         this.coffeeType = coffeeType;
+        super.setItemPrice(itemPrice());
+        super.setItemString(coffeeDataString());
+    }
+
+    public Coffee(int coffeeQuantity, String coffeeType, ArrayList addInsList ){
+        super(coffeeQuantity);
+        this.coffeeType = coffeeType;
+        this.addInsList = addInsList;
+        super.setItemPrice(itemPrice());
+        super.setItemString(coffeeDataString());
+    }
+
+    private Coffee(Parcel in){
+        super(in.readInt());
+        this.coffeeType = in.readString();
+        this.addInsList = in.readArrayList(null);
         super.setItemPrice(itemPrice());
         super.setItemString(coffeeDataString());
     }
@@ -171,6 +211,14 @@ public class Coffee extends MenuItem implements Customizable{
             stringBuilder.append(s);
         }
         return stringBuilder.toString();
+    }
+
+    public String getCoffeeType() {
+        return coffeeType;
+    }
+
+    public ArrayList<String> getAddInsList() {
+        return addInsList;
     }
 }
 

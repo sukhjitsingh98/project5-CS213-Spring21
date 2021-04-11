@@ -8,25 +8,28 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="@+id/orderCoffeeButton"
+        android:layout_height="145dp"
+        android:layout_marginTop="140dp"
         android:clickable="false"
         android:contentDescription="@string/order_coffee_button"
         android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/orderCoffeeButton"
+        app:layout_constraintEnd_toEndOf="@+id/orderCoffeeButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/orderCoffeeButton"
+        app:layout_constraintTop_toTopOf="@+id/orderCoffeeButton"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/coffee" />
+
 
     <Button
         android:id="@+id/orderCoffeeButton"
-        android:layout_width="350dp"
-        android:layout_height="201dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="116dp"
+        android:layout_width="165dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="140dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:onClick="handleOrderCoffee"
@@ -38,14 +41,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="@+id/orderDonutButton"
+        android:layout_height="145dp"
+        android:layout_marginTop="140dp"
+        android:clickable="false"
+        android:contentDescription="@string/order_coffee_button"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="@+id/orderDonutButton"
+        app:layout_constraintEnd_toEndOf="@+id/orderDonutButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/orderDonutButton"
+        app:layout_constraintTop_toTopOf="@+id/orderDonutButton"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/donuts" />
 
     <Button
         android:id="@+id/orderDonutButton"
-        android:layout_width="350dp"
-        android:layout_height="201dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="328dp"
+        android:layout_width="165dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginLeft="216dp"
+        android:layout_marginTop="140dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:onClick="handleOrderDonut"
@@ -57,27 +75,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="349dp"
-        android:layout_height="200dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="328dp"
+        android:id="@+id/storeOrdersImage"
+        android:layout_width="@+id/storeOrdersButton"
+        android:layout_height="@+id/storeOrdersButton"
         android:clickable="false"
-        android:contentDescription="@string/order_coffee_button"
+        android:contentDescription="@string/store_orders_button"
         android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/donuts" />
+        app:layout_constraintBottom_toBottomOf="@+id/storeOrdersButton"
+        app:layout_constraintEnd_toEndOf="@+id/storeOrdersButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/storeOrdersButton"
+        app:layout_constraintTop_toTopOf="@+id/storeOrdersButton"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/orders" />
 
     <Button
         android:id="@+id/storeOrdersButton"
-        android:layout_width="163dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginLeft="212dp"
-        android:layout_marginTop="548dp"
+        android:layout_width="165dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="216dp"
+        android:layout_marginLeft="216dp"
+        android:layout_marginTop="304dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="@string/store_orders_button"
@@ -89,43 +110,31 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/storeOrdersImage"
-        android:layout_width="164dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="212dp"
-        android:layout_marginLeft="212dp"
-        android:layout_marginTop="548dp"
-        android:clickable="false"
-        android:contentDescription="@string/store_orders_button"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/orders" />
-
-    <ImageView
         android:id="@+id/currentOrderImage"
-        android:layout_width="164dp"
-        android:layout_height="121dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="548dp"
+        android:layout_width="@+id/currentOrderButton"
+        android:layout_height="@+id/currentOrderButton"
         android:clickable="false"
         android:contentDescription="@string/current_order_button"
         android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/currentOrderButton"
+        app:layout_constraintEnd_toEndOf="@+id/currentOrderButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/currentOrderButton"
+        app:layout_constraintTop_toTopOf="@+id/currentOrderButton"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/cart" />
 
     <Button
         android:id="@+id/currentOrderButton"
         android:layout_width="165dp"
-        android:layout_height="122dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="548dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="304dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="@string/current_order_button"
+        android:onClick="handleCurrentOrder"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:backgroundTint="#65000000"
@@ -141,9 +150,19 @@
         android:text="@string/title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.063"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="85dp" />
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/outputTemp"
+        android:layout_width="384dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
