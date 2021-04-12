@@ -47,4 +47,6 @@
     <string name="removeMenuItemButtonText">Remove Item</string>
     <string name="submitOrderButtonText">Submit Order</string>
     <string name="subtotalLabel">Subtotal</string>
+    <string name="taxLabel">Tax</string>
+    <string name="totalLabel">Total</string>
 </resources>

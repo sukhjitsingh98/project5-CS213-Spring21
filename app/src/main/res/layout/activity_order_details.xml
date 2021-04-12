@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,14 +9,16 @@
 
     <Button
         android:id="@+id/removeMenuItemButton"
-        android:layout_width="149dp"
+        android:layout_width="163dp"
         android:layout_height="86dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:onClick="onMenuItemRemoved"
         android:text="@string/removeMenuItemButtonText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/submitOrderButton"
@@ -23,45 +26,105 @@
         android:layout_height="86dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/submitOrderButtonText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22" />
 
     <ListView
         android:id="@+id/menuItemListView"
         android:layout_width="346dp"
         android:layout_height="259dp"
-        android:background="@drawable/selected_item"
+        android:layout_marginTop="140dp"
+        android:choiceMode="singleChoice"
+        android:listSelector="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintVertical_bias="0.057" />
 
     <TextView
         android:id="@+id/currentOrderSubtotalTextView"
-        android:layout_width="194dp"
-        android:layout_height="57dp"
+        android:layout_width="195dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="400dp"
+        android:text=""
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.837"
+        app:layout_constraintHorizontal_bias="0.853"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.735" />
+        app:layout_constraintVertical_bias="0.165" />
+
+    <TextView
+        android:id="@+id/currentOrderTaxTextView"
+        android:layout_width="194dp"
+        android:layout_height="30dp"
+        android:text=""
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.852"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentOrderSubtotalTextView"
+        app:layout_constraintVertical_bias="0.149" />
+
+    <TextView
+        android:id="@+id/currentOrderTotalTextView"
+        android:layout_width="194dp"
+        android:layout_height="30dp"
+        android:text=""
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.852"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currentOrderTaxTextView"
+        app:layout_constraintVertical_bias="0.196" />
 
     <TextView
         android:id="@+id/subtotalLabel"
         android:layout_width="118dp"
         android:layout_height="30dp"
+        android:layout_marginTop="400dp"
         android:text="@string/subtotalLabel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.156"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727" />
+        app:layout_constraintVertical_bias="0.162" />
+
+    <TextView
+        android:id="@+id/taxLabel"
+        android:layout_width="118dp"
+        android:layout_height="30dp"
+        android:text="@string/taxLabel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtotalLabel"
+        app:layout_constraintVertical_bias="0.153" />
+
+    <TextView
+        android:id="@+id/totalLabel"
+        android:layout_width="118dp"
+        android:layout_height="30dp"
+        android:text="@string/totalLabel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taxLabel"
+        app:layout_constraintVertical_bias="0.196" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
