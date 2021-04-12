@@ -13,7 +13,7 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class OrderingCoffeeActivity extends AppCompatActivity /*implements AdapterView.OnItemSelectedListener*/ {
+public class OrderingCoffeeActivity extends AppCompatActivity {
 
     String size = "Short";
     int quantity = 1;

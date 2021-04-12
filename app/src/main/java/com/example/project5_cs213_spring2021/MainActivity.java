@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void handleOrderCoffee(View view) {
         Intent intent = new Intent(this, OrderingCoffeeActivity.class);
-        startActivityForResult(intent, 1);
+        startActivityForResult(intent, Constants.FIRST_REQUEST_CODE);
     }
 
     public void handleOrderDonut(View view) {
@@ -32,13 +32,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void handleCurrentOrder(View view) {
         Intent intent = new Intent(this, OrderDetailsActivity.class);
-        startActivity(intent);
+        System.out.println(currentOrder.getItems().get(0).getItemString());
+        intent.putExtra("currentOrder", new Order(currentOrder.getOrderNumber(), currentOrder.getItems()));
+        startActivityForResult(intent, Constants.THIRD_REQUEST_CODE);
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent ){
         super.onActivityResult(requestCode, resultCode, intent);
-        if(requestCode == 1 && resultCode == Activity.RESULT_OK){
+        if(requestCode == Constants.FIRST_REQUEST_CODE && resultCode == Activity.RESULT_OK){
             Coffee coffee = (Coffee) intent.getExtras().getParcelable("key");
             currentOrder.add(coffee);
             //For debugging purposes. DELETE WHEN DONE

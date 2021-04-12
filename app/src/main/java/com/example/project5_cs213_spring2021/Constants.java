@@ -23,5 +23,10 @@ public final class Constants {
 
     //StoreOrders Constants
     public static final int FIRST_ORDER = 1;
+
+    //MainMenu Constants
+    public static final int FIRST_REQUEST_CODE = 1;
+    public static final int SECOND_REQUEST_CODE = 2;
+    public static final int THIRD_REQUEST_CODE = 3;
 }
 

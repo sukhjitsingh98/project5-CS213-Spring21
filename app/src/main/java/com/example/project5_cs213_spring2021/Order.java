@@ -1,5 +1,8 @@
 package com.example.project5_cs213_spring2021;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 /**
@@ -11,10 +14,29 @@ import java.util.ArrayList;
  @author German Munguia, Sukhjit Singh
  */
 
-public class Order implements Customizable{
+public class Order implements Customizable, Parcelable{
     private int orderNumber;
     private ArrayList<MenuItem> items = new ArrayList<>();
     private double totalPrice;
+
+    public int describeContents(){
+        return 0;
+    }
+
+    public void writeToParcel(Parcel out, int flags){
+        out.writeInt(orderNumber);
+        out.writeList(items);
+        updateTotal();
+    }
+
+    public static final Parcelable.Creator<Order> CREATOR = new Parcelable.Creator<Order>(){
+        public Order createFromParcel (Parcel in){
+            return new Order(in);
+        }
+        public Order[] newArray(int size){
+            return new Order[size];
+        }
+    };
 
     /**
      Constructor used to generate a Order object with a given order number
@@ -22,6 +44,19 @@ public class Order implements Customizable{
      */
     public Order(int orderNumber){
         this.orderNumber = orderNumber;
+    }
+
+    public Order(int orderNumber, ArrayList items){
+        this.orderNumber = orderNumber;
+        this.items = items;
+        updateTotal();
+
+    }
+
+    private Order(Parcel in){
+        this.orderNumber = in.readInt();
+        this.items = in.readArrayList( MenuItem.class.getClassLoader());
+        updateTotal();
     }
 
     /**
@@ -73,7 +108,10 @@ public class Order implements Customizable{
         //reset the prize
         totalPrice = 0;
         //If there are no items, leave the price at 0.
-        if(items.size() == 0) {
+        if(items == null){
+            return;
+        }
+        else if(items.size() == 0) {
             return;
         }
 
