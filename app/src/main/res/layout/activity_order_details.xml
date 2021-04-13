@@ -28,6 +28,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="20dp"
+        android:onClick="onSubmitOrder"
         android:text="@string/submitOrderButtonText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -75,7 +76,7 @@
         app:layout_constraintVertical_bias="0.149" />
 
     <TextView
-        android:id="@+id/currentOrderTotalTextView"
+        android:id="@+id/finalTotalTextView"
         android:layout_width="194dp"
         android:layout_height="30dp"
         android:text=""
@@ -115,7 +116,7 @@
         app:layout_constraintVertical_bias="0.153" />
 
     <TextView
-        android:id="@+id/totalLabel"
+        android:id="@+id/finalTotalLabel"
         android:layout_width="118dp"
         android:layout_height="30dp"
         android:text="@string/totalLabel"

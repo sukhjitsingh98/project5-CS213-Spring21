@@ -6,4 +6,62 @@
     android:layout_height="match_parent"
     tools:context=".StoreOrdersActivity">
 
+    <Spinner
+        android:id="@+id/orderNumberSpinner"
+        android:layout_width="262dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/storeOrdersMenuItemListView"
+        android:layout_width="346dp"
+        android:layout_height="224dp"
+        android:layout_marginTop="236dp"
+        android:choiceMode="singleChoice"
+        android:listSelector="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/cancelOrderButton"
+        android:layout_width="147dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="132dp"
+        android:text="@string/cancelOrder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/finalTotalTextView"
+        android:layout_width="194dp"
+        android:layout_height="30dp"
+        android:text=""
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.731" />
+
+    <TextView
+        android:id="@+id/finalTotalLabel"
+        android:layout_width="118dp"
+        android:layout_height="30dp"
+        android:text="@string/totalLabel"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.109"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.731" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

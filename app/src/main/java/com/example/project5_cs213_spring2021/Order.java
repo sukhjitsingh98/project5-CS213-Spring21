@@ -50,7 +50,6 @@ public class Order implements Customizable, Parcelable{
         this.orderNumber = orderNumber;
         this.items = items;
         updateTotal();
-
     }
 
     private Order(Parcel in){

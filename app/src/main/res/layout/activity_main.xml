@@ -102,6 +102,7 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="@string/store_orders_button"
+        android:onClick="handleStoreOrders"
         android:textColor="#FFFFFF"
         android:textStyle="bold"
         app:backgroundTint="#65000000"

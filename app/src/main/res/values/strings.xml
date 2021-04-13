@@ -49,4 +49,6 @@
     <string name="subtotalLabel">Subtotal</string>
     <string name="taxLabel">Tax</string>
     <string name="totalLabel">Total</string>
+
+    <string name="cancelOrder">Cancel Order</string>
 </resources>

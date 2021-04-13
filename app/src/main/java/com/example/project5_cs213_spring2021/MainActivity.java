@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     int orderNumber = Constants.FIRST_ORDER;
     Order currentOrder = new Order(orderNumber);
+    StoreOrders storeOrders = new StoreOrders();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +38,17 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, Constants.THIRD_REQUEST_CODE);
     }
 
+    public void handleStoreOrders(View view){
+        Intent intent = new Intent(this, StoreOrdersActivity.class);
+        intent.putExtra("storeOrders", new StoreOrders(storeOrders.getOrders()));
+        startActivityForResult(intent, Constants.FOURTH_REQUEST_CODE);
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent ){
         super.onActivityResult(requestCode, resultCode, intent);
+
+        //Receive Coffee Details When Submit Button is Pressed
         if(requestCode == Constants.FIRST_REQUEST_CODE && resultCode == Activity.RESULT_OK){
             Coffee coffee = (Coffee) intent.getExtras().getParcelable("key");
             currentOrder.add(coffee);
@@ -47,5 +56,16 @@ public class MainActivity extends AppCompatActivity {
             TextView textView = (TextView) findViewById(R.id.outputTemp);
             textView.setText(coffee.getItemString());
         }
+        //Receive Order Details When Back Button is Pressed
+        else if(requestCode == Constants.THIRD_REQUEST_CODE && resultCode == Constants.BACK_PRESS_RESULT_CODE) {
+            currentOrder = (Order) intent.getExtras().getParcelable("sendOrder");
+        }
+        //Receive Order Details When Submit Order Button is Pressed
+        else if(requestCode == Constants.THIRD_REQUEST_CODE && resultCode == Constants.SUBMIT_ORDER_RESULT_CODE) {
+            storeOrders.add((Order) intent.getExtras().getParcelable("sendOrder"));
+            orderNumber++;
+            currentOrder = new Order(orderNumber);
+        }
+
     }
 }

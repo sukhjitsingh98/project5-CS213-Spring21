@@ -61,6 +61,26 @@ public class OrderDetailsActivity extends AppCompatActivity {
         setPriceFields();
     }
 
+    public void onSubmitOrder(View view){
+        if(currentOrder.getItems().size() == 0){
+            //print error message
+            return;
+        }
+        Intent sendOrderIntent = new Intent();
+        sendOrderIntent.putExtra("sendOrder", currentOrder);
+        setResult(Constants.SUBMIT_ORDER_RESULT_CODE, sendOrderIntent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed(){
+        Intent sendOrderIntent = new Intent();
+        sendOrderIntent.putExtra("sendOrder", currentOrder);
+        setResult(Constants.BACK_PRESS_RESULT_CODE, sendOrderIntent);
+        finish();
+    }
+
+
     //Method which returns arraylist of menuItem string data
     private ArrayList getItemStringArray(){
         ArrayList<String> itemStringList = new ArrayList<>();
@@ -91,7 +111,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
     private void setPriceFields(){
         TextView subtotalLabel = findViewById(R.id.currentOrderSubtotalTextView);
         TextView taxLabel = findViewById(R.id.currentOrderTaxTextView);
-        TextView totalLabel = findViewById(R.id.currentOrderTotalTextView);
+        TextView totalLabel = findViewById(R.id.finalTotalTextView);
 
         double salesTax = calculateSubTotal() * Constants.NJ_SALES_USE_TAX_RATE;
 

@@ -1,5 +1,8 @@
 package com.example.project5_cs213_spring2021;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 /**
@@ -10,14 +13,39 @@ import java.util.ArrayList;
 
  @author German Munguia, Sukhjit Singh
  */
-public class StoreOrders implements Customizable{
+public class StoreOrders implements Customizable, Parcelable {
 
     private ArrayList<Order> orders = new ArrayList<>();
+
+    public int describeContents(){
+        return 0;
+    }
+
+    public void writeToParcel(Parcel out, int flags){
+        out.writeList(orders);
+    }
+
+    public static final Parcelable.Creator<StoreOrders> CREATOR = new Parcelable.Creator<StoreOrders>(){
+        public StoreOrders createFromParcel (Parcel in){
+            return new StoreOrders(in);
+        }
+        public StoreOrders[] newArray(int size){
+            return new StoreOrders[size];
+        }
+    };
 
     /**
      Default constructor used to generate a StoreOrders object
      */
     public StoreOrders(){
+    }
+
+    public StoreOrders(ArrayList orders){
+        this.orders = orders;
+    }
+
+    private StoreOrders(Parcel in){
+        this.orders = in.readArrayList(Order.class.getClassLoader());
     }
 
     /**
@@ -61,6 +89,14 @@ public class StoreOrders implements Customizable{
      */
     public Order getOrder(int i){
         return orders.get(i);
+    }
+
+    /**
+     Getter method which returns the orders arraylist containing Order objects.
+     @return orders arraylist
+     */
+    public ArrayList<Order> getOrders() {
+        return orders;
     }
 
     /**

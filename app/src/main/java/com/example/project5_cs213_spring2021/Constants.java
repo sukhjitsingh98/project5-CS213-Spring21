@@ -23,6 +23,8 @@ public final class Constants {
 
     //OrderDetails Constants
     public static final int DEFAULT_SELECTION_INDEX = -1;
+    public static final int SUBMIT_ORDER_RESULT_CODE = 1;
+    public static final int BACK_PRESS_RESULT_CODE = 2;
 
     //StoreOrders Constants
     public static final int FIRST_ORDER = 1;
@@ -31,5 +33,6 @@ public final class Constants {
     public static final int FIRST_REQUEST_CODE = 1;
     public static final int SECOND_REQUEST_CODE = 2;
     public static final int THIRD_REQUEST_CODE = 3;
+    public static final int FOURTH_REQUEST_CODE = 4;
 }
 
