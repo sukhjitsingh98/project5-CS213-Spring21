@@ -16,7 +16,6 @@ public class AddDonutActivity extends AppCompatActivity {
     TextView flavorName;
     TextView price;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

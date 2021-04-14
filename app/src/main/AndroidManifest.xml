@@ -11,37 +11,51 @@
         android:theme="@style/Theme.Project5CS213Spring2021">
         <activity
             android:name=".StoreOrdersActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:label="@string/storeOrdersPageTitle">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
-        <activity android:name=".AddDonutActivity"
-            android:parentActivityName=".OrderingDonutsActivity">
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".OrderingDonutsActivity"/>
-        </activity>
-        <activity android:name=".OrderDetailsActivity"
-            android:parentActivityName=".MainActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
-        </activity>
+
         <activity
-            android:name=".OrderingCoffeeActivity" android:parentActivityName=".MainActivity">
+            android:name=".AddDonutActivity"
+            android:parentActivityName=".OrderingDonutsActivity"
+            android:label="@string/donutPageTitle2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".OrderingDonutsActivity"/>
+        </activity>
+
+        <activity android:name=".OrderDetailsActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/orderDetailsPageTitle">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
+
+        <activity
+            android:name=".OrderingCoffeeActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="@string/coffeePageTitle2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+
         <activity
             android:name=".OrderingDonutsActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:label="@string/donutPageTitle">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
-            <activity android:name=".MainActivity">
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/mainMenuPageTitle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -5,7 +5,13 @@
     <string name="current_order_button">Current Order</string>
     <string name="store_orders_button">Store Orders</string>
     <string name="title">RU Café Dashboard</string>
-    <string name="coffeePageTitle">ORDER COFFEE</string>
+    <string name="coffeePageTitle1">ORDER COFFEE</string>
+    <string name="coffeePageTitle2">Order Coffee</string>
+    <string name="donutPageTitle">Order Donuts</string>
+    <string name="orderDetailsPageTitle">Current Order Details</string>
+    <string name="storeOrdersPageTitle">Store Orders</string>
+    <string name="mainMenuPageTitle">RU Cafe Main Menu</string>
+    <string name="donutPageTitle2">Add Donut</string>
 
     <string-array name="coffeeSizes" >
         <item>Short</item>
