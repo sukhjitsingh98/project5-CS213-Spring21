@@ -10,9 +10,9 @@
         android:id="@+id/donuts3Page"
         android:layout_width="323dp"
         android:layout_height="225dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="20dp"
         android:clickable="false"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:id="@+id/countSpinner"
         android:layout_width="100dp"
         android:layout_height="57dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="300dp"
         android:baselineAligned="false"
         android:entries="@array/donutCount"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,11 +35,11 @@
         android:id="@+id/button2"
         android:layout_width="156dp"
         android:layout_height="61dp"
-        android:layout_marginTop="552dp"
+        android:layout_marginTop="475dp"
         android:onClick="handleAddDonut"
         android:text="@string/add_donut_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.906"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,37 +47,40 @@
         android:id="@+id/flavorName"
         android:layout_width="133dp"
         android:layout_height="54dp"
+        android:layout_marginTop="300dp"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintHorizontal_bias="0.158"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/donutPrice"
         android:layout_width="142dp"
         android:layout_height="58dp"
+        android:layout_marginTop="430dp"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintVertical_bias="0.192" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="141dp"
         android:layout_height="30dp"
+        android:layout_marginTop="400dp"
         android:text="@string/subtotalLabel"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.162"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.744" />
+        app:layout_constraintVertical_bias="0.164" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

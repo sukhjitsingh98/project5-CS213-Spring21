@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/donutsPage"
-        android:layout_width="271dp"
-        android:layout_height="218dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
+        android:layout_width="186dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginLeft="112dp"
         android:layout_marginTop="4dp"
         android:clickable="false"
         android:contentDescription="@string/order_coffee_button"
@@ -24,24 +24,26 @@
         android:id="@+id/selectableFlavors"
         android:layout_width="309dp"
         android:layout_height="153dp"
+        android:layout_marginTop="200dp"
         android:entries="@array/donutFlavors"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ListView
         android:id="@+id/selected"
-        android:layout_width="309dp"
-        android:layout_height="153dp"
+        android:layout_width="308dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="405dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.871" />
+        app:layout_constraintVertical_bias="0.026" />
 
     <Button
         android:id="@+id/placeDonutOrder"
@@ -49,72 +51,78 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="216dp"
         android:layout_marginLeft="216dp"
-        android:text="@string/add_donut_button"
+        android:layout_marginTop="550dp"
         android:onClick="onSubmitDonutOrder"
+        android:text="@string/add_donut_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.102" />
 
     <TextView
         android:id="@+id/price_of_donuts"
         android:layout_width="83dp"
         android:layout_height="42dp"
+        android:layout_marginTop="550dp"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.128"
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.094" />
 
     <View
         android:layout_width="309dp"
         android:layout_height="16dp"
+        android:layout_marginTop="389dp"
         android:background="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintHorizontal_bias="0.519"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.682" />
+        app:layout_constraintVertical_bias="0.015" />
 
     <View
         android:id="@+id/view"
         android:layout_width="309dp"
         android:layout_height="16dp"
+        android:layout_marginTop="184dp"
         android:background="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/selectableDonuts"
-        android:layout_width="304dp"
-        android:layout_height="25dp"
+        android:layout_width="305dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="150dp"
         android:text="@string/selectable_donuts"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.335" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/selectedDonuts"
-        android:layout_width="305dp"
-        android:layout_height="33dp"
+        android:layout_width="307dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="355dp"
         android:text="@string/selected_donuts"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
+        app:layout_constraintVertical_bias="0.014" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
