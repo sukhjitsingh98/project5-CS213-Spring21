@@ -149,7 +149,7 @@ public class Order implements Customizable, Parcelable{
 
         //traverse the list
         for(int i = 0; i < items.size(); i++) {
-            totalPrice += items.get(i).getItemPrice() * items.get(i).getItemQuantity();
+            totalPrice += items.get(i).getItemPrice() ;
         }
 
     }

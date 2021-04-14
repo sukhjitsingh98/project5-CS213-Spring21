@@ -61,24 +61,12 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(coffee.getItemString());
         }
         else if(requestCode == Constants.SECOND_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-
-            System.out.println("RECEIVED");
-
-            //ERROR HERE
             ArrayList<Donut> donuts = intent.getExtras().getParcelableArrayList("donuts");
-            //ArrayList<Donut> donuts = intent.getParcelableArrayListExtra("donuts");
-
-             System.out.println(donuts + " donuts");
-             if(donuts != null) {
-                 System.out.println("size:" + donuts.size());
-                 System.out.println(donuts.get(0).getItemString() + "  <");
-             }
 
             for (Donut donut : donuts){
                 currentOrder.add(donut);
             }
 
-           // System.out.println(donuts);
         }
 
         //Receive Order Details When Back Button is Pressed
@@ -90,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
             storeOrders.add((Order) intent.getExtras().getParcelable("sendOrder"));
             orderNumber++;
             currentOrder = new Order(orderNumber);
+        }
+
+        //Receive store orders when back button is pressed.
+        else if(requestCode == Constants.FOURTH_REQUEST_CODE && resultCode == Constants.BACK_PRESS_RESULT_CODE) {
+            storeOrders = (StoreOrders) intent.getExtras().getParcelable("storeOrders");
         }
 
     }
