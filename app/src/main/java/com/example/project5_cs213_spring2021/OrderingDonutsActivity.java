@@ -23,9 +23,7 @@ import java.util.ArrayList;
 public class OrderingDonutsActivity extends AppCompatActivity {
 
     ArrayList<Donut> donuts = new ArrayList<>();
-    int code = 100; //magic number to replace later.
     String flavor = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +43,14 @@ public class OrderingDonutsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 //once selected, call the activity.
-                //Toast.makeText(OrderingDonutsActivity.this, selectableFlavors.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
                 flavor = selectableFlavors.getItemAtPosition(position).toString();
                 Intent intent = new Intent(OrderingDonutsActivity.this, AddDonutActivity.class);
                 //Send the name of the flavor to display.
                 intent.putExtra(String.valueOf(R.string.flavor), flavor);
-                startActivityForResult(intent, code);
+                startActivityForResult(intent, Constants.DONUT_REQUEST_CODE);
 
             }
         });
-
 
     }
 
@@ -86,19 +82,16 @@ public class OrderingDonutsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 //display popup and remove the donut clicked if confirmed.
-                //Toast.makeText(OrderingDonutsActivity.this, "CLICKED", Toast.LENGTH_SHORT).show();
                 AlertDialog.Builder dialog = new AlertDialog.Builder(OrderingDonutsActivity.this);
-                dialog.setMessage("Remove the donut from the order?")
-                        .setPositiveButton("Remove", new DialogInterface.OnClickListener() {
+                dialog.setMessage(R.string.remove_dialong)
+                        .setPositiveButton(R.string.remove_button, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 //Deletion has been confirmed, delete the donut from the list.
-                                System.out.println("deleting at position: " + position);
                                 removeDonutFromList(position);
                             }
                         })
-                        .setNegativeButton("Cancel", null);
-
+                        .setNegativeButton(R.string.cancel_button, null);
 
                 AlertDialog alert = dialog.create();
                 alert.show();
@@ -113,7 +106,7 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         super.onActivityResult(request, result, data);
 
         //Check for matching codes.
-        if(request == code) {
+        if(request == Constants.DONUT_REQUEST_CODE) {
             if(result == Activity.RESULT_OK) {
                 //Get the resulting data from intent
                 int donutCount = Integer.parseInt( data.getStringExtra(Intent.EXTRA_TEXT));
@@ -152,19 +145,8 @@ public class OrderingDonutsActivity extends AppCompatActivity {
     //will return the info of donut selection
     public void onSubmitDonutOrder(View view) {
 
-        System.out.println("WILL SEND");
-        for(int i = 0; i < donuts.size(); i++) {
-            System.out.println(donuts.get(i).getItemString() + " <-");
-        }
-
-        //ERROR
-
         Intent sendDonutIntent = new Intent();
-
         sendDonutIntent.putParcelableArrayListExtra("donuts", donuts);
-        //Donut d = new Donut(55);
-       // sendDonutIntent.putExtra("donut", d);
-//        sendDonutIntent.putExtra("donuts", donuts);
         setResult(Activity.RESULT_OK, sendDonutIntent);
         finish();
     }

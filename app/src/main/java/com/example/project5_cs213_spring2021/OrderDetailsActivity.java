@@ -27,6 +27,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         currentOrder = intent.getParcelableExtra("currentOrder");
 
+
         menuItemsList = (ListView) findViewById(R.id.menuItemListView);
         adapter = new ArrayAdapter<String>(
                 this,

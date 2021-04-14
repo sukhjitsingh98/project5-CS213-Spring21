@@ -13,6 +13,7 @@ public final class Constants {
 
     //Donut Constants
     public static final double DONUT_PRICE = 1.39;
+    public static final int DONUT_REQUEST_CODE = 100;
 
     //Coffee Constants
     public static final double SHORT_BLACK_COFFEE = 1.99;
