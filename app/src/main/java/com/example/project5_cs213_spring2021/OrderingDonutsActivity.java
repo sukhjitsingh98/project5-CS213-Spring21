@@ -161,7 +161,7 @@ public class OrderingDonutsActivity extends AppCompatActivity {
 
         Intent sendDonutIntent = new Intent();
 
-        sendDonutIntent.putExtra("donuts", donuts);
+        sendDonutIntent.putParcelableArrayListExtra("donuts", donuts);
         //Donut d = new Donut(55);
        // sendDonutIntent.putExtra("donut", d);
 //        sendDonutIntent.putExtra("donuts", donuts);

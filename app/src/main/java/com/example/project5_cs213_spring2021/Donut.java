@@ -23,6 +23,7 @@ public class Donut extends MenuItem implements Customizable, Parcelable {
     }
 
     public void writeToParcel(Parcel out, int flags) {
+        out.writeInt(count);
         out.writeString(flavor);
         out.writeInt(count);
     }
@@ -146,7 +147,7 @@ public class Donut extends MenuItem implements Customizable, Parcelable {
      @return donutData String representing the data members of an instance of the Donut class.
      */
     private String donutDataString(){
-        String donutData = flavor + ", Quantity: " + super.getItemQuantity();
+        String donutData = flavor + " flavor donut" + ", Quantity: " + super.getItemQuantity();
         return donutData;
     }
 

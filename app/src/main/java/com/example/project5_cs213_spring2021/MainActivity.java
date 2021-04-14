@@ -74,6 +74,10 @@ public class MainActivity extends AppCompatActivity {
                  System.out.println(donuts.get(0).getItemString() + "  <");
              }
 
+            for (Donut donut : donuts){
+                currentOrder.add(donut);
+            }
+
            // System.out.println(donuts);
         }
 
