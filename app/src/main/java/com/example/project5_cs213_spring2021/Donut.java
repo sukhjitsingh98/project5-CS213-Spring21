@@ -10,6 +10,8 @@ import java.io.Serializable;
  Contains constructors to generate Donut objects using the parameter data.
  The class allows for donut flavors to be removed, added, the price and data of individual Donut instances to be
  updated, and can return the String representation of the Donut data.
+ This class also contains methods corresponding to the Parcelable interface class. These methods allow
+ for the data members to be Parceled and transferred to a different activity to be reconstructed.
 
  @author German Munguia, Sukhjit Singh
  */
@@ -18,22 +20,43 @@ public class Donut extends MenuItem implements Customizable, Parcelable {
     private String flavor;
     private int count;
 
+    /**
+     Describes the kinds of special objects contained in this Parcelable instance's marshaled representation
+     @return 0 default return value
+     */
     public int describeContents() {
         return 0;
     }
 
+    /**
+     Method to flatten the object into a Parcel
+     @param out the Parcel in which the object should be written
+     @param flags indicates how the object should be written
+     */
     public void writeToParcel(Parcel out, int flags) {
         out.writeInt(count);
         out.writeString(flavor);
         out.writeInt(count);
     }
 
+    /**
+     Specialization of Creator class which allows the system to receive the ClassLoader the object is being created in.
+     */
     public static final Parcelable.Creator<Donut> CREATOR
             = new Parcelable.Creator<Donut>() {
+        /**
+         Create a new instance of the Parcelable class, instantiating it from the given Parcel
+         whose data had previously been written by the writeToParcel() method and using the given ClassLoader
+         @param in the Parcel to the read the object's data from
+         */
         public Donut createFromParcel(Parcel in) {
             return new Donut(in);
         }
 
+        /**
+         Create a new array of the Parcelable class
+         @param size of the array
+         */
         public Donut[] newArray(int size) {
             return new Donut[size];
         }
@@ -51,6 +74,10 @@ public class Donut extends MenuItem implements Customizable, Parcelable {
         count = donutQuantity;
     }
 
+    /**
+     Constructor used to generate a Donut object using the Parcelable data
+     @param in the Parcel to the read the Donut's data from
+     */
     private Donut(Parcel in) {
         super(in.readInt());
         this.flavor = in.readString();

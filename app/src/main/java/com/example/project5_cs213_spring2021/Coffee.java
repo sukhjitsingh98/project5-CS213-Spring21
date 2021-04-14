@@ -12,6 +12,8 @@ import androidx.versionedparcelable.ParcelField;
  Contains constructors to generate Coffee objects using the parameter data.
  The class allows for coffee addins to be removed, added, the price and data of individual Coffee instances to be
  updated, and can return the String representation of the Coffee data.
+ This class also contains methods corresponding to the Parcelable interface class. These methods allow
+ for the data members to be Parceled and transferred to a different activity to be reconstructed.
 
  @author German Munguia, Sukhjit Singh
  */
@@ -21,20 +23,42 @@ public class Coffee extends MenuItem implements Customizable, Parcelable {
     private String coffeeType;
     private ArrayList<String> addInsList = new ArrayList<String>();
 
+    /**
+     Describes the kinds of special objects contained in this Parcelable instance's marshaled representation
+     @return 0 default return value
+     */
     public int describeContents(){
         return 0;
     }
 
+    /**
+     Method to flatten the object into a Parcel
+     @param out the Parcel in which the object should be written
+     @param flags indicates how the object should be written
+     */
     public void writeToParcel(Parcel out, int flags){
         out.writeInt(super.getItemQuantity());
         out.writeString(coffeeType);
         out.writeList(addInsList);
     }
 
+    /**
+     Specialization of Creator class which allows the system to receive the ClassLoader the object is being created in.
+     */
     public static final Parcelable.Creator<Coffee> CREATOR = new Parcelable.Creator<Coffee>(){
+        /**
+         Create a new instance of the Parcelable class, instantiating it from the given Parcel
+         whose data had previously been written by the writeToParcel() method and using the given ClassLoader
+         @param in the Parcel to the read the object's data from
+         */
         public Coffee createFromParcel (Parcel in){
             return new Coffee(in);
         }
+
+        /**
+         Create a new array of the Parcelable class
+         @param size of the array
+         */
         public Coffee[] newArray(int size){
             return new Coffee[size];
         }
@@ -52,6 +76,13 @@ public class Coffee extends MenuItem implements Customizable, Parcelable {
         super.setItemString(coffeeDataString());
     }
 
+    /**
+     Constructor used to generate a Coffee object with a given coffee size and quantity
+     (Used when generating Parcelable objects)
+     @param coffeeQuantity the quantity of the coffee to be ordered
+     @param coffeeType the size of the coffee to be ordered
+     @param addInsList the arrayList containing the Coffee add in data
+     */
     public Coffee(int coffeeQuantity, String coffeeType, ArrayList addInsList ){
         super(coffeeQuantity);
         this.coffeeType = coffeeType;
@@ -60,6 +91,10 @@ public class Coffee extends MenuItem implements Customizable, Parcelable {
         super.setItemString(coffeeDataString());
     }
 
+    /**
+     Constructor used to generate a Coffee object using the Parcelable data
+     @param in the Parcel to the read the Coffee's data from
+     */
     private Coffee(Parcel in){
         super(in.readInt());
         this.coffeeType = in.readString();
@@ -158,14 +193,6 @@ public class Coffee extends MenuItem implements Customizable, Parcelable {
     }
 
     /**
-     Getter method which returns the price of an instance of the Coffee class.
-     @return Coffee instance price retrieved from the super class.
-     */
-    public double getCoffeePrice(){
-        return super.getItemPrice();
-    }
-
-    /**
      Setter method which sets the size of an instance of the Coffee class.
      The subtotal price and String representation of the Coffee instance is updated.
      @param coffeeType String representation of a coffee cup size
@@ -213,10 +240,18 @@ public class Coffee extends MenuItem implements Customizable, Parcelable {
         return stringBuilder.toString();
     }
 
+    /**
+     Getter method which returns the type of Coffee.
+     @return coffeeType of the Coffee object
+     */
     public String getCoffeeType() {
         return coffeeType;
     }
 
+    /**
+     Getter method which returns the arrayList containing Coffee add in data.
+     @return addInsList arrayList containing Coffee add in data.
+     */
     public ArrayList<String> getAddInsList() {
         return addInsList;
     }

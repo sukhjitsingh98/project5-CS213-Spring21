@@ -10,6 +10,8 @@ import java.util.ArrayList;
  Contains constructors to generate Order objects.
  The class allows for MenuItem objects to be removed, added, the price of the items to be updated, return the
  arraylist of items, and can return the order number of an individual Order object.
+ This class also contains methods corresponding to the Parcelable interface class. These methods allow
+ for the data members to be Parceled and transferred to a different activity to be reconstructed.
 
  @author German Munguia, Sukhjit Singh
  */
@@ -19,20 +21,42 @@ public class Order implements Customizable, Parcelable{
     private ArrayList<MenuItem> items = new ArrayList<>();
     private double totalPrice;
 
+    /**
+     Describes the kinds of special objects contained in this Parcelable instance's marshaled representation
+     @return 0 default return value
+     */
     public int describeContents(){
         return 0;
     }
 
+    /**
+     Method to flatten the object into a Parcel
+     @param out the Parcel in which the object should be written
+     @param flags indicates how the object should be written
+     */
     public void writeToParcel(Parcel out, int flags){
         out.writeInt(orderNumber);
         out.writeList(items);
         updateTotal();
     }
 
+    /**
+     Specialization of Creator class which allows the system to receive the ClassLoader the object is being created in.
+     */
     public static final Parcelable.Creator<Order> CREATOR = new Parcelable.Creator<Order>(){
+        /**
+         Create a new instance of the Parcelable class, instantiating it from the given Parcel
+         whose data had previously been written by the writeToParcel() method and using the given ClassLoader
+         @param in the Parcel to the read the object's data from
+         */
         public Order createFromParcel (Parcel in){
             return new Order(in);
         }
+
+        /**
+         Create a new array of the Parcelable class
+         @param size of the array
+         */
         public Order[] newArray(int size){
             return new Order[size];
         }
@@ -46,12 +70,21 @@ public class Order implements Customizable, Parcelable{
         this.orderNumber = orderNumber;
     }
 
+    /**
+     Constructor used to generate a Order object with a given order number and menu items arrayList
+     @param orderNumber unique identifier for an instance of the Order class.
+     @param items arrayList containing Donut and/or Coffee menu items
+     */
     public Order(int orderNumber, ArrayList items){
         this.orderNumber = orderNumber;
         this.items = items;
         updateTotal();
     }
 
+    /**
+     Constructor used to generate an Order object using the Parcelable data
+     @param in the Parcel to the read the Order's data from
+     */
     private Order(Parcel in){
         this.orderNumber = in.readInt();
         this.items = in.readArrayList( MenuItem.class.getClassLoader());
