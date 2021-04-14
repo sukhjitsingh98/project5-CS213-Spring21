@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void handleOrderDonut(View view) {
         Intent intent = new Intent(this, OrderingDonutsActivity.class);
-        startActivity(intent);
+        //intent.putExtra("OrderingDonutsActivity", orderingDonutsActivity);
+        startActivityForResult(intent, Constants.SECOND_REQUEST_CODE);
     }
 
     public void handleCurrentOrder(View view) {
@@ -56,6 +60,23 @@ public class MainActivity extends AppCompatActivity {
             TextView textView = (TextView) findViewById(R.id.outputTemp);
             textView.setText(coffee.getItemString());
         }
+        else if(requestCode == Constants.SECOND_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+
+            System.out.println("RECEIVED");
+
+            //ERROR HERE
+            ArrayList<Donut> donuts = intent.getExtras().getParcelableArrayList("donuts");
+            //ArrayList<Donut> donuts = intent.getParcelableArrayListExtra("donuts");
+
+             System.out.println(donuts + " donuts");
+             if(donuts != null) {
+                 System.out.println("size:" + donuts.size());
+                 System.out.println(donuts.get(0).getItemString() + "  <");
+             }
+
+           // System.out.println(donuts);
+        }
+
         //Receive Order Details When Back Button is Pressed
         else if(requestCode == Constants.THIRD_REQUEST_CODE && resultCode == Constants.BACK_PRESS_RESULT_CODE) {
             currentOrder = (Order) intent.getExtras().getParcelable("sendOrder");

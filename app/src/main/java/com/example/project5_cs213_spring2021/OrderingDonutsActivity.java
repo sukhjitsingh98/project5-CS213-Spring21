@@ -149,6 +149,23 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         loadSelected();
     }
 
+    //will return the info of donut selection
+    public void onSubmitDonutOrder(View view) {
 
+        System.out.println("WILL SEND");
+        for(int i = 0; i < donuts.size(); i++) {
+            System.out.println(donuts.get(i).getItemString() + " <-");
+        }
 
+        //ERROR
+
+        Intent sendDonutIntent = new Intent();
+
+        sendDonutIntent.putExtra("donuts", donuts);
+        //Donut d = new Donut(55);
+       // sendDonutIntent.putExtra("donut", d);
+//        sendDonutIntent.putExtra("donuts", donuts);
+        setResult(Activity.RESULT_OK, sendDonutIntent);
+        finish();
+    }
 }

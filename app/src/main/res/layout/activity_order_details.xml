@@ -92,7 +92,6 @@
         android:id="@+id/subtotalLabel"
         android:layout_width="118dp"
         android:layout_height="30dp"
-        android:layout_marginTop="400dp"
         android:text="@string/subtotalLabel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"

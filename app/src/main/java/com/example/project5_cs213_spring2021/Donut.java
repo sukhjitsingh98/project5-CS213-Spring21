@@ -1,5 +1,10 @@
 package com.example.project5_cs213_spring2021;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 /**
  The Donut class defines the abstract Donut type.
  Contains constructors to generate Donut objects using the parameter data.
@@ -9,14 +14,46 @@ package com.example.project5_cs213_spring2021;
  @author German Munguia, Sukhjit Singh
  */
 
-public class Donut extends MenuItem implements Customizable{
+public class Donut extends MenuItem implements Customizable, Parcelable {
     private String flavor;
+    private int count;
+
+    public int describeContents() {
+        return 0;
+    }
+
+    public void writeToParcel(Parcel out, int flags) {
+        out.writeString(flavor);
+        out.writeInt(count);
+    }
+
+    public static final Parcelable.Creator<Donut> CREATOR
+            = new Parcelable.Creator<Donut>() {
+        public Donut createFromParcel(Parcel in) {
+            return new Donut(in);
+        }
+
+        public Donut[] newArray(int size) {
+            return new Donut[size];
+        }
+    };
+
+
     /**
      Constructor used to generate a Donut object with a given quantity
      @param donutQuantity the quantity of the donuts to be ordered
      */
     public Donut(int donutQuantity){
         super(donutQuantity);
+        super.setItemPrice(itemPrice());
+        super.setItemString(donutDataString());
+        count = donutQuantity;
+    }
+
+    private Donut(Parcel in) {
+        super(in.readInt());
+        this.flavor = in.readString();
+        this.count = in.readInt();
         super.setItemPrice(itemPrice());
         super.setItemString(donutDataString());
     }

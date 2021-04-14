@@ -6,11 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/donuts3Page"
+        android:layout_width="323dp"
+        android:layout_height="225dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="52dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/donuts3" />
+
     <Spinner
         android:id="@+id/countSpinner"
-        android:layout_width="98dp"
-        android:layout_height="77dp"
-        android:layout_marginTop="336dp"
+        android:layout_width="100dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="356dp"
         android:baselineAligned="false"
         android:entries="@array/donutCount"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,12 +33,13 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="604dp"
+        android:layout_width="156dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="552dp"
         android:onClick="handleAddDonut"
         android:text="@string/add_donut_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,6 +47,7 @@
         android:id="@+id/flavorName"
         android:layout_width="133dp"
         android:layout_height="54dp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.151"
@@ -42,13 +57,27 @@
 
     <TextView
         android:id="@+id/donutPrice"
-        android:layout_width="111dp"
-        android:layout_height="32dp"
+        android:layout_width="142dp"
+        android:layout_height="58dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.683" />
+        app:layout_constraintVertical_bias="0.82" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="141dp"
+        android:layout_height="30dp"
+        android:text="@string/subtotalLabel"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.744" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

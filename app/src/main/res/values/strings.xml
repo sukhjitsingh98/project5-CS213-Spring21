@@ -43,6 +43,9 @@
     <string name="flavor">flavor</string>
     <string name="remove_donut">Donut has been removed.</string>
     <string name="dollar_sign">$</string>
+    <string name="selectable_donuts">Donuts Flavors Available:</string>
+    <string name="selected_donuts">Donuts Selected:</string>
+
 
     <string name="removeMenuItemButtonText">Remove Item</string>
     <string name="submitOrderButtonText">Submit Order</string>
