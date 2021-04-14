@@ -115,4 +115,10 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
         onBackPressed();
     }
 
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return true;
+    }
+
 }

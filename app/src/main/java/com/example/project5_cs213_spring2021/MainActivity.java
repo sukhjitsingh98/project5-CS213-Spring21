@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void handleCurrentOrder(View view) {
         Intent intent = new Intent(this, OrderDetailsActivity.class);
-        System.out.println(currentOrder.getItems().get(0).getItemString());
         intent.putExtra("currentOrder", new Order(currentOrder.getOrderNumber(), currentOrder.getItems()));
         startActivityForResult(intent, Constants.THIRD_REQUEST_CODE);
     }

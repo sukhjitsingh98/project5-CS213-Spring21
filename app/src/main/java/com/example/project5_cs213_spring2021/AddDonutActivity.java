@@ -52,6 +52,11 @@ public class AddDonutActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_TEXT, donutCount);
         setResult(RESULT_OK, intent);
         finish(); //close and return
+    }
 
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return true;
     }
 }

@@ -114,4 +114,13 @@ public class StoreOrdersActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public boolean onSupportNavigateUp(){
+        Intent sendOrderIntent = new Intent();
+        sendOrderIntent.putExtra("storeOrders", storeOrders);
+        setResult(Constants.BACK_PRESS_RESULT_CODE, sendOrderIntent);
+        finish();
+        return true;
+    }
+
 }

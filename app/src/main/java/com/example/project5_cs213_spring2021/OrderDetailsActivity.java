@@ -81,6 +81,14 @@ public class OrderDetailsActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public boolean onSupportNavigateUp(){
+        Intent sendOrderIntent = new Intent();
+        sendOrderIntent.putExtra("sendOrder", currentOrder);
+        setResult(Constants.BACK_PRESS_RESULT_CODE, sendOrderIntent);
+        finish();
+        return true;
+    }
 
     //Method which returns arraylist of menuItem string data
     private ArrayList getItemStringArray(){

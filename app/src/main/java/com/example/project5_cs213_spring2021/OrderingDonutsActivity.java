@@ -150,4 +150,10 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         setResult(Activity.RESULT_OK, sendDonutIntent);
         finish();
     }
+
+    @Override
+    public boolean onSupportNavigateUp(){
+        onBackPressed();
+        return true;
+    }
 }
