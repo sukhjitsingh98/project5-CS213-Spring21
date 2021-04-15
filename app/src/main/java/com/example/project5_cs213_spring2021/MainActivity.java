@@ -58,9 +58,7 @@ public class MainActivity extends AppCompatActivity {
         if(requestCode == Constants.FIRST_REQUEST_CODE && resultCode == Activity.RESULT_OK){
             Coffee coffee = (Coffee) intent.getExtras().getParcelable("coffeeKey");
             currentOrder.add(coffee);
-            //For debugging purposes. DELETE WHEN DONE
-            TextView textView = (TextView) findViewById(R.id.outputTemp);
-            textView.setText(coffee.getItemString());
+            Toast.makeText(MainActivity.this, R.string.coffeeSuccessDialogue, Toast.LENGTH_SHORT).show();
         }
         else if(requestCode == Constants.SECOND_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             ArrayList<Donut> donuts = intent.getExtras().getParcelableArrayList("donuts");
@@ -68,23 +66,26 @@ public class MainActivity extends AppCompatActivity {
             for (Donut donut : donuts){
                 currentOrder.add(donut);
             }
-
+            Toast.makeText(MainActivity.this, R.string.donutSuccessDialogue, Toast.LENGTH_SHORT).show();
         }
 
         //Receive Order Details When Back Button is Pressed
         else if(requestCode == Constants.THIRD_REQUEST_CODE && resultCode == Constants.BACK_PRESS_RESULT_CODE) {
             currentOrder = (Order) intent.getExtras().getParcelable("sendOrder");
+            Toast.makeText(MainActivity.this, R.string.changesSavedDialogue, Toast.LENGTH_SHORT).show();
         }
         //Receive Order Details When Submit Order Button is Pressed
         else if(requestCode == Constants.THIRD_REQUEST_CODE && resultCode == Constants.SUBMIT_ORDER_RESULT_CODE) {
             storeOrders.add((Order) intent.getExtras().getParcelable("sendOrder"));
             orderNumber++;
             currentOrder = new Order(orderNumber);
+            Toast.makeText(MainActivity.this, R.string.orderSuccessDialogue, Toast.LENGTH_SHORT).show();
         }
 
         //Receive store orders when back button is pressed.
         else if(requestCode == Constants.FOURTH_REQUEST_CODE && resultCode == Constants.BACK_PRESS_RESULT_CODE) {
             storeOrders = (StoreOrders) intent.getExtras().getParcelable("storeOrders");
+            Toast.makeText(MainActivity.this, R.string.changesSavedDialogue, Toast.LENGTH_SHORT).show();
         }
 
     }

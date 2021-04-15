@@ -61,6 +61,10 @@
     <string name="orderDeletedDialogue">Order Successfully Deleted!</string>
     <string name="noItemToOrderDialogue">Error: There are no items to order!</string>
     <string name="noDonutsToOrderDialogue">Error: There are no donuts to order!</string>
+    <string name="coffeeSuccessDialogue">Coffee(s) Successfully Added!</string>
+    <string name="donutSuccessDialogue">Donut(s) Successfully Added!</string>
+    <string name="orderSuccessDialogue">Order Successfully Placed!</string>
+    <string name="changesSavedDialogue">Order Changes Saved!</string>
 
     <string name="removeMenuItemButtonText">Remove Item</string>
     <string name="submitOrderButtonText">Submit Order</string>
