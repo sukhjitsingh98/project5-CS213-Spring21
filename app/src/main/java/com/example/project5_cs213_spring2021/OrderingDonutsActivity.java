@@ -20,11 +20,17 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+
+
 public class OrderingDonutsActivity extends AppCompatActivity {
 
     ArrayList<Donut> donuts = new ArrayList<>();
     String flavor = null;
 
+    /**
+     Called when the activity is starting and is where most initialization happens.
+     @param savedInstanceState bundle which contains the data most recently supplied when the activity previously shutdown
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +84,13 @@ public class OrderingDonutsActivity extends AppCompatActivity {
 
         //now set up a onclick.
         selected.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /**
+             Callback method which is invoked when an item in this AdapterView has been clicked
+             @param parent The AdapterView where the click happened
+             @param view within the AdapterView that was clicked
+             @param position of the view in the adapter
+             @param id of the item that was clicked
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -154,6 +167,9 @@ public class OrderingDonutsActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     Override the UP button to prevent the MainActivity from restarting when the button is pressed.
+     */
     @Override
     public boolean onSupportNavigateUp(){
         onBackPressed();

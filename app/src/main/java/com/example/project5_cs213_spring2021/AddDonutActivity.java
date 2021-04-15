@@ -16,6 +16,10 @@ public class AddDonutActivity extends AppCompatActivity {
     TextView flavorName;
     TextView price;
 
+    /**
+     Called when the activity is starting and is where most initialization happens.
+     @param savedInstanceState bundle which contains the data most recently supplied when the activity previously shutdown
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

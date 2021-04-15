@@ -6,10 +6,12 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 
 /**
- The Order class defines the abstract StoreOrders type which contains the array consisting of Order class objects.
+ The StoreOrders class defines the abstract StoreOrders type which contains the array consisting of Order class objects.
  Contains constructors to generate StoreOrders objects.
  The class allows for Order objects to be removed, added, return the order number of an individual Order object, and
- return the number of orders in the orders arraylist.]
+ return the number of orders in the orders arraylist.
+ This class also contains methods corresponding to the Parcelable interface class. These methods allow
+ for the data members to be Parceled and transferred to a different activity to be reconstructed.
 
  @author German Munguia, Sukhjit Singh
  */
@@ -17,18 +19,40 @@ public class StoreOrders implements Customizable, Parcelable {
 
     private ArrayList<Order> orders = new ArrayList<>();
 
+    /**
+     Describes the kinds of special objects contained in this Parcelable instance's marshaled representation
+     @return 0 default return value
+     */
     public int describeContents(){
         return 0;
     }
 
+    /**
+     Method to flatten the object into a Parcel
+     @param out the Parcel in which the object should be written
+     @param flags indicates how the object should be written
+     */
     public void writeToParcel(Parcel out, int flags){
         out.writeList(orders);
     }
 
+    /**
+     Specialization of Creator class which allows the system to receive the ClassLoader the object is being created in.
+     */
     public static final Parcelable.Creator<StoreOrders> CREATOR = new Parcelable.Creator<StoreOrders>(){
+        /**
+         Create a new instance of the Parcelable class, instantiating it from the given Parcel
+         whose data had previously been written by the writeToParcel() method and using the given ClassLoader
+         @param in the Parcel to the read the object's data from
+         */
         public StoreOrders createFromParcel (Parcel in){
             return new StoreOrders(in);
         }
+
+        /**
+         Create a new array of the Parcelable class
+         @param size of the array
+         */
         public StoreOrders[] newArray(int size){
             return new StoreOrders[size];
         }
@@ -40,10 +64,19 @@ public class StoreOrders implements Customizable, Parcelable {
     public StoreOrders(){
     }
 
+    /**
+     Constructor used to generate a StoreOrders object
+     (Used when generating Parcelable objects)
+     @param orders arrayList containing Order objects
+     */
     public StoreOrders(ArrayList orders){
         this.orders = orders;
     }
 
+    /**
+     Constructor used to generate a Donut object using the Parcelable data
+     @param in the Parcel to the read the Donut's data from
+     */
     private StoreOrders(Parcel in){
         this.orders = in.readArrayList(Order.class.getClassLoader());
     }

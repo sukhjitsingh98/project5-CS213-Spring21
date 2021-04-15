@@ -13,6 +13,17 @@ import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+/**
+ The OrderingCoffeeActivity class defines the methods associated with the activity_ordering_coffee.xml GUI file.
+ The public methods define the actions performed when buttons, checkbox, and spinner items are clicked in the GUI
+ application.
+ The private methods are helper methods to aid in the functionality of the button, checkbox, and spinner methods.
+ An Addins arraylist is created and the methods interact with this arraylist to add, remove, or
+ manipulate the Coffee addin data given by the user in the GUI application.
+
+ @author German Munguia, Sukhjit Singh
+ */
+
 public class OrderingCoffeeActivity extends AppCompatActivity {
 
     String size = "Short";
@@ -20,6 +31,10 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
     Coffee coffee = new Coffee(size, quantity);
     TextView subtotalTextView;
 
+    /**
+     Called when the activity is starting and is where most initialization happens.
+     @param savedInstanceState bundle which contains the data most recently supplied when the activity previously shutdown
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +48,7 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
                 getResources().getStringArray(R.array.coffeeSizes));
 
         coffeeSizeDropdown.setAdapter(coffeeSizeAdapter);
-        coffeeSizeDropdown.setOnItemSelectedListener(
-                new AdapterView.OnItemSelectedListener() {
+        coffeeSizeDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         size = coffeeSizeDropdown.getSelectedItem().toString();
                         coffee.setCoffeeType(size);
@@ -45,7 +59,6 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
                     }
                 });
 
-
         //Dropdown Menu for Coffee Quantity
         Spinner coffeeCountDropdown = findViewById(R.id.coffeeCount_spinner);
         ArrayAdapter<String> coffeeCountAdapter = new ArrayAdapter<>(
@@ -54,8 +67,8 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
                 getResources().getStringArray(R.array.coffeeCount));
 
         coffeeCountDropdown.setAdapter(coffeeCountAdapter);
-        coffeeCountDropdown.setOnItemSelectedListener(
-                new AdapterView.OnItemSelectedListener() {
+
+        coffeeCountDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         quantity = Integer.parseInt(coffeeCountDropdown.getSelectedItem().toString());
                         coffee.setCoffeeQuantity(quantity);
@@ -68,6 +81,11 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
 
     }
 
+    /**
+     Checks if any of the checkboxes are selected and based on the selection it adds or removes the associated addin from the
+     Coffee object and updates the subtotal price.
+     @param view associated with the listener for the Intent object
+     */
     public void onCheckboxClicked(View view){
         boolean checked = ((CheckBox) view).isChecked();
 
@@ -103,6 +121,8 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
                     coffee.remove("whipped cream");
                 break;
         }
+
+        //Display the updated price
         subtotalTextView = (TextView) findViewById(R.id.subtotalTextView);
         subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
     }
@@ -115,6 +135,9 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
         onBackPressed();
     }
 
+    /**
+     Override the UP button to prevent the MainActivity from restarting when the button is pressed.
+     */
     @Override
     public boolean onSupportNavigateUp(){
         onBackPressed();
