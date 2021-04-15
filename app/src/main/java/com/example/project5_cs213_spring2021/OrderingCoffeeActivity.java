@@ -48,16 +48,28 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
                 getResources().getStringArray(R.array.coffeeSizes));
 
         coffeeSizeDropdown.setAdapter(coffeeSizeAdapter);
+
         coffeeSizeDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        size = coffeeSizeDropdown.getSelectedItem().toString();
-                        coffee.setCoffeeType(size);
-                        subtotalTextView = (TextView) findViewById(R.id.subtotalTextView);
-                        subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
-                    }
-                    public void onNothingSelected(AdapterView<?> parent) { //selected by default, this does nothing but is still needed.
-                    }
-                });
+            /**
+             Callback method which is invoked when an item in this view has been selected
+             @param parent The AdapterView where the selection happened
+             @param view within the AdapterView that was selected
+             @param position of the view in the adapter
+             @param id of the item that was selected
+             */
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                size = coffeeSizeDropdown.getSelectedItem().toString();
+                coffee.setCoffeeType(size);
+                subtotalTextView = (TextView) findViewById(R.id.subtotalTextView);
+                subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
+            }
+            /**
+             Callback method which is invoked when the selection disappears from this view
+             @param parent The AdapterView where the selection happened
+             */
+            public void onNothingSelected(AdapterView<?> parent) { //selected by default, this does nothing but is still needed.
+            }
+        });
 
         //Dropdown Menu for Coffee Quantity
         Spinner coffeeCountDropdown = findViewById(R.id.coffeeCount_spinner);
@@ -69,16 +81,26 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
         coffeeCountDropdown.setAdapter(coffeeCountAdapter);
 
         coffeeCountDropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        quantity = Integer.parseInt(coffeeCountDropdown.getSelectedItem().toString());
-                        coffee.setCoffeeQuantity(quantity);
-                        subtotalTextView = (TextView) findViewById(R.id.subtotalTextView);
-                        subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
-                    }
-                    public void onNothingSelected(AdapterView<?> parent) { //selected by default, this does nothing but is still needed.
-                    }
-                });
-
+            /**
+             Callback method which is invoked when an item in this view has been selected
+             @param parent The AdapterView where the selection happened
+             @param view within the AdapterView that was selected
+             @param position of the view in the adapter
+             @param id of the item that was selected
+             */
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                quantity = Integer.parseInt(coffeeCountDropdown.getSelectedItem().toString());
+                coffee.setCoffeeQuantity(quantity);
+                subtotalTextView = (TextView) findViewById(R.id.subtotalTextView);
+                subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
+            }
+            /**
+             Callback method which is invoked when the selection disappears from this view
+             @param parent The AdapterView where the selection happened
+             */
+            public void onNothingSelected(AdapterView<?> parent) { //selected by default, this does nothing but is still needed.
+            }
+        });
     }
 
     /**
@@ -127,6 +149,10 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
         subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
     }
 
+    /**
+     Parcels the the Coffee Object, sends it to MainActivity, and closes this GUI page.
+     @param view associated with the listener for the Intent object
+     */
     public void onSubmitCoffeeOrder(View view){
 
         Intent sendCoffeeIntent = new Intent();

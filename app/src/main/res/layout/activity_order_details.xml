@@ -14,11 +14,12 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
+        android:background="#FFFFFF"
         android:onClick="onMenuItemRemoved"
         android:text="@string/removeMenuItemButtonText"
+        app:backgroundTint="#871C14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/submitOrderButton"
@@ -27,12 +28,11 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
         android:onClick="onSubmitOrder"
         android:text="@string/submitOrderButtonText"
+        app:backgroundTint="#007305"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/menuItemListView"

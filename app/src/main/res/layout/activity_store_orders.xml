@@ -33,8 +33,9 @@
         android:layout_width="147dp"
         android:layout_height="57dp"
         android:layout_marginTop="132dp"
-        android:text="@string/cancelOrder"
         android:onClick="handleOrderRemoval"
+        android:text="@string/cancelOrder"
+        app:backgroundTint="#BF2418"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
