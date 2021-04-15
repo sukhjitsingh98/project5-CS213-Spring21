@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Receive Coffee Details When Submit Button is Pressed
         if(requestCode == Constants.FIRST_REQUEST_CODE && resultCode == Activity.RESULT_OK){
-            Coffee coffee = (Coffee) intent.getExtras().getParcelable("key");
+            Coffee coffee = (Coffee) intent.getExtras().getParcelable("coffeeKey");
             currentOrder.add(coffee);
             //For debugging purposes. DELETE WHEN DONE
             TextView textView = (TextView) findViewById(R.id.outputTemp);

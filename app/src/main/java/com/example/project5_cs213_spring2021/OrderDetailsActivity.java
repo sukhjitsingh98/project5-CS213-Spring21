@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -26,7 +27,6 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         currentOrder = intent.getParcelableExtra("currentOrder");
-
 
         menuItemsList = (ListView) findViewById(R.id.menuItemListView);
         adapter = new ArrayAdapter<String>(
@@ -48,11 +48,11 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
     public void onMenuItemRemoved(View view){
         if(currentOrder.getItems().size() == 0){
-            //print error message
+            Toast.makeText(OrderDetailsActivity.this, R.string.noItemDialogue, Toast.LENGTH_SHORT).show();
             return;
         }
         else if(selectedItemIndex == Constants.DEFAULT_SELECTION_INDEX){
-            //error message
+            Toast.makeText(OrderDetailsActivity.this, R.string.noSelectionDialogue, Toast.LENGTH_SHORT).show();
             return;
         }
         currentOrder.remove( currentOrder.getItems().get(selectedItemIndex));
@@ -64,7 +64,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
     public void onSubmitOrder(View view){
         if(currentOrder.getItems().size() == 0){
-            //print error message
+            Toast.makeText(OrderDetailsActivity.this, R.string.noItemToOrderDialogue, Toast.LENGTH_SHORT).show();
             return;
         }
         Intent sendOrderIntent = new Intent();

@@ -110,7 +110,7 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
     public void onSubmitCoffeeOrder(View view){
 
         Intent sendCoffeeIntent = new Intent();
-        sendCoffeeIntent.putExtra("key", new Coffee(coffee.getItemQuantity(), coffee.getCoffeeType(), coffee.getAddInsList()));
+        sendCoffeeIntent.putExtra("coffeeKey", new Coffee(coffee.getItemQuantity(), coffee.getCoffeeType(), coffee.getAddInsList()));
         setResult(Activity.RESULT_OK, sendCoffeeIntent);
         onBackPressed();
     }

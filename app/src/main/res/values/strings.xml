@@ -55,6 +55,13 @@
     <string name="remove_dialong">Remove the donut from the order?</string>
     <string name="cancel_button">Cancel</string>
 
+    <string name="noSelectionDialogue">Error: No item was selected! Try Again!</string>
+    <string name="noItemDialogue">Error: There are no items to delete!</string>
+    <string name="noOrderDialogue">Error: There are no orders to delete!</string>
+    <string name="orderDeletedDialogue">Order Successfully Deleted!</string>
+    <string name="noItemToOrderDialogue">Error: There are no items to order!</string>
+    <string name="noDonutsToOrderDialogue">Error: There are no donuts to order!</string>
+
     <string name="removeMenuItemButtonText">Remove Item</string>
     <string name="submitOrderButtonText">Submit Order</string>
     <string name="subtotalLabel">Subtotal</string>

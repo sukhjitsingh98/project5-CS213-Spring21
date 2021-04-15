@@ -144,7 +144,10 @@ public class OrderingDonutsActivity extends AppCompatActivity {
 
     //will return the info of donut selection
     public void onSubmitDonutOrder(View view) {
-
+        if(donuts.size() == 0){
+            Toast.makeText(OrderingDonutsActivity.this, R.string.noDonutsToOrderDialogue, Toast.LENGTH_SHORT).show();
+            return;
+        }
         Intent sendDonutIntent = new Intent();
         sendDonutIntent.putParcelableArrayListExtra("donuts", donuts);
         setResult(Activity.RESULT_OK, sendDonutIntent);

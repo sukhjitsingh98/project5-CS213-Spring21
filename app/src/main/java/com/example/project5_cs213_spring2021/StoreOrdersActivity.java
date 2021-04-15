@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -75,11 +76,17 @@ public class StoreOrdersActivity extends AppCompatActivity {
 
     //remove the select order.
     public void handleOrderRemoval(View view) {
+        if(storeOrders.getOrders().size() == 0){
+            Toast.makeText(StoreOrdersActivity.this, R.string.noOrderDialogue, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         int orderSelectedIndex = orderNumbers.getSelectedItemPosition();
-        System.out.println(   storeOrders.remove( storeOrders.getOrder(orderSelectedIndex)));
+        storeOrders.remove( storeOrders.getOrder(orderSelectedIndex));
 
         //now update the spinner and listView
         updateSpinner();
+        Toast.makeText(StoreOrdersActivity.this, R.string.orderDeletedDialogue, Toast.LENGTH_SHORT).show();
 
     }
 
