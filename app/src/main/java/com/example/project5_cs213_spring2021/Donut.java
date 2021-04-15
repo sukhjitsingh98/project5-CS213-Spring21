@@ -3,8 +3,6 @@ package com.example.project5_cs213_spring2021;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
-
 /**
  The Donut class defines the abstract Donut type.
  Contains constructors to generate Donut objects using the parameter data.

@@ -168,8 +168,8 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
         double salesTax = calculateSubTotal() * Constants.NJ_SALES_USE_TAX_RATE;
 
-        subtotalLabel.setText("$" + String.format("%.2f", calculateSubTotal()));
-        taxLabel.setText("$" + String.format("%.2f", salesTax));
-        totalLabel.setText("$" + String.format("%.2f", (calculateSubTotal() + salesTax)));
+        subtotalLabel.setText(getResources().getString(R.string.dollar_sign) + String.format("%.2f", calculateSubTotal()));
+        taxLabel.setText(getResources().getString(R.string.dollar_sign) + String.format("%.2f", salesTax));
+        totalLabel.setText(getResources().getString(R.string.dollar_sign) + String.format("%.2f", (calculateSubTotal() + salesTax)));
     }
 }

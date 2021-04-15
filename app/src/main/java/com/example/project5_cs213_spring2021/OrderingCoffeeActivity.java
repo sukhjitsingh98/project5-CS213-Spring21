@@ -61,7 +61,7 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
                 size = coffeeSizeDropdown.getSelectedItem().toString();
                 coffee.setCoffeeType(size);
                 subtotalTextView = (TextView) findViewById(R.id.subtotalTextView);
-                subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
+                subtotalTextView.setText(getResources().getString(R.string.dollar_sign) + String.format("%.2f", coffee.getItemPrice()));
             }
             /**
              Callback method which is invoked when the selection disappears from this view
@@ -92,7 +92,7 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
                 quantity = Integer.parseInt(coffeeCountDropdown.getSelectedItem().toString());
                 coffee.setCoffeeQuantity(quantity);
                 subtotalTextView = (TextView) findViewById(R.id.subtotalTextView);
-                subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
+                subtotalTextView.setText(getResources().getString(R.string.dollar_sign) + String.format("%.2f", coffee.getItemPrice()));
             }
             /**
              Callback method which is invoked when the selection disappears from this view
@@ -146,7 +146,7 @@ public class OrderingCoffeeActivity extends AppCompatActivity {
 
         //Display the updated price
         subtotalTextView = (TextView) findViewById(R.id.subtotalTextView);
-        subtotalTextView.setText("$" + String.format("%.2f", coffee.getItemPrice()));
+        subtotalTextView.setText(getResources().getString(R.string.dollar_sign) + String.format("%.2f", coffee.getItemPrice()));
     }
 
     /**
